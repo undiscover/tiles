@@ -1,23 +1,30 @@
-body {
-    color: #4a4a4a;
-    font-family: 'Open Sans', sans-serif;
+$primary-color: #4a4a4a;
+$font-family: 'Open Sans', sans-serif;
+$spacing: 4%;
+
+.spacing-bottom {
+    padding-bottom: $spacing;
 }
 
 .wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: $primary-color;
+    font-family: $font-family;
 }
 
 .tile {
     display: flex;
-    width: 100%;
     max-width: 1280px;
-    padding: 0 0 60px 0;
+}
+
+.tile:not(:last-child) {
+    @extend .spacing-bottom;
 }
 
 .tile__media {
-    width: 98%;
+    width: 100%;
     padding: 2% 1%;
 }
 
@@ -26,12 +33,12 @@ body {
 }
 
 .tile__info {
-    width: 98%;
+    width: 100%;
     padding: 2% 1%;
 }
 
 .tile__name {
-    margin-bottom: 5%;
+    @extend .spacing-bottom;
 }
 
 .tile__title {
@@ -48,7 +55,8 @@ body {
 }
 
 .tile__action {
-    margin-bottom: 5%;
+    @extend .spacing-bottom;
+    display: flex;
 }
 
 .tile__description {
@@ -56,29 +64,39 @@ body {
 }
 
 .tile__button {
-    color: #4a4a4a;
+    color: $primary-color;
+    border: 1px solid $primary-color;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
-    border: 1px solid #4a4a4a;
     padding: 10px;
     margin: 0 10px 0 0;
 }
 
-@media (max-width: 900px) and (min-width: 600px) {
+@media (max-width: 1280px) and (min-width: 680px) {
     .tile__media {
-        width: 48%;
+        width: 50%;
+    }
+
+    .tile__title {
+        font-size: 1.8em;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
     .tile {
         flex-direction: column;
     }
+
     .tile__media {
         order: 2;
     }
+
     .tile__info  {
         order: 1;
+    }
+
+    .tile__title {
+        font-size: 1.8em;
     }
 }
