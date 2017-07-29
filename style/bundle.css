@@ -1,34 +1,39 @@
-.spacing-bottom, .tile:not(:last-child), .tile__name, .tile__action {
-  padding-bottom: 4%; }
+@import url(reset.css);
+body, html {
+  line-height: 1.4; }
 
-.wrap {
+.tiles {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #4a4a4a;
   font-family: "Open Sans", sans-serif; }
 
+.spacing-bottom, .tile:not(:last-child), .tile__name, .tile__action {
+  padding-bottom: 5%; }
+
+.spacing-around, .tile__media, .tile__info {
+  padding: 2% 1%; }
+
 .tile {
   display: flex;
   max-width: 1280px; }
 
 .tile__media {
-  width: 100%;
-  padding: 2% 1%; }
+  width: 98%; }
 
 .tile__album {
   width: 100%; }
 
 .tile__info {
-  width: 100%;
-  padding: 2% 1%; }
+  width: 98%; }
 
 .tile__title {
   font-size: 2.3em;
   font-weight: 700;
   display: flex; }
 
-.tile__subtitle {
+.tile__artist {
   font-size: 1.6em;
   font-weight: 700;
   font-style: italic;
@@ -58,6 +63,9 @@
 @media (max-width: 680px) {
   .tile {
     flex-direction: column; }
+
+  .tile:not(:last-child) {
+    padding-bottom: 20%; }
 
   .tile__media {
     order: 2; }

@@ -1,17 +1,26 @@
+@import 'reset.css';
+
 $primary-color: #4a4a4a;
 $font-family: 'Open Sans', sans-serif;
-$spacing: 4%;
 
-.spacing-bottom {
-    padding-bottom: $spacing;
+body, html {
+        line-height: 1.4;
 }
 
-.wrap {
+.tiles {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $primary-color;
     font-family: $font-family;
+}
+
+.spacing-bottom {
+    padding-bottom: 5%;
+}
+
+.spacing-around {
+    padding: 2% 1%;
 }
 
 .tile {
@@ -24,8 +33,8 @@ $spacing: 4%;
 }
 
 .tile__media {
-    width: 100%;
-    padding: 2% 1%;
+    @extend .spacing-around;
+    width: 98%;
 }
 
 .tile__album {
@@ -33,8 +42,8 @@ $spacing: 4%;
 }
 
 .tile__info {
-    width: 100%;
-    padding: 2% 1%;
+    @extend .spacing-around;
+    width: 98%;
 }
 
 .tile__name {
@@ -47,7 +56,7 @@ $spacing: 4%;
     display: flex;
 }
 
-.tile__subtitle {
+.tile__artist {
     font-size: 1.6em;
     font-weight: 700;
     font-style: italic;
@@ -86,6 +95,10 @@ $spacing: 4%;
 @media (max-width: 680px) {
     .tile {
         flex-direction: column;
+    }
+
+    .tile:not(:last-child) {
+        padding-bottom: 20%;
     }
 
     .tile__media {
