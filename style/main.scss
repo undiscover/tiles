@@ -4,10 +4,11 @@ $primary-color: #4a4a4a;
 $font-family: 'Open Sans', sans-serif;
 
 body, html {
-        line-height: 1.4;
+    line-height: 1.4;
 }
 
 .tiles {
+    margin: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +21,7 @@ body, html {
 }
 
 .spacing-around {
-    padding: 2% 1%;
+    padding: 25px 15px;
 }
 
 .tile {
@@ -29,7 +30,7 @@ body, html {
 }
 
 .tile:not(:last-child) {
-    @extend .spacing-bottom;
+    padding-bottom: 80px;
 }
 
 .tile__media {
@@ -39,6 +40,15 @@ body, html {
 
 .tile__album {
     width: 100%;
+    height: 100%;
+}
+
+.tile__cover {
+    display: flex;
+}
+
+.tile__player {
+    display: flex;
 }
 
 .tile__info {
@@ -93,12 +103,12 @@ body, html {
 }
 
 @media (max-width: 680px) {
+    .spacing-around {
+        padding: 10px 5px;
+    }
+    
     .tile {
         flex-direction: column;
-    }
-
-    .tile:not(:last-child) {
-        padding-bottom: 20%;
     }
 
     .tile__media {

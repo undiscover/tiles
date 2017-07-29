@@ -3,27 +3,38 @@ body, html {
   line-height: 1.4; }
 
 .tiles {
+  margin: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #4a4a4a;
   font-family: "Open Sans", sans-serif; }
 
-.spacing-bottom, .tile:not(:last-child), .tile__name, .tile__action {
+.spacing-bottom, .tile__name, .tile__action {
   padding-bottom: 5%; }
 
 .spacing-around, .tile__media, .tile__info {
-  padding: 2% 1%; }
+  padding: 25px 15px; }
 
 .tile {
   display: flex;
   max-width: 1280px; }
 
+.tile:not(:last-child) {
+  padding-bottom: 80px; }
+
 .tile__media {
   width: 98%; }
 
 .tile__album {
-  width: 100%; }
+  width: 100%;
+  height: 100%; }
+
+.tile__cover {
+  display: flex; }
+
+.tile__player {
+  display: flex; }
 
 .tile__info {
   width: 98%; }
@@ -61,11 +72,11 @@ body, html {
   .tile__title {
     font-size: 1.8em; } }
 @media (max-width: 680px) {
+  .spacing-around, .tile__media, .tile__info {
+    padding: 10px 5px; }
+
   .tile {
     flex-direction: column; }
-
-  .tile:not(:last-child) {
-    padding-bottom: 20%; }
 
   .tile__media {
     order: 2; }
